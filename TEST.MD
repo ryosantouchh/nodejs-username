@@ -1,3 +1,41 @@
+1.1
+
+```ts
+enum Gender {
+  Male = 'male',
+  FEMALE = 'female',
+  PREFER_NOT_TO_SAY = 'prefer_not_to_say',
+}
+
+type User = {
+  id: number
+  firstName: string
+  lastName: string
+  gender: Gender
+  birthDate: string | Date
+  image: string
+}
+
+const users: Array<User> = [
+  {
+    id: 1,
+    firstName: 'Somsak',
+    lastName: 'Deemak',
+    gender: 'male',
+    birthDate: '2000-06-13T00:00:00.000Z',
+    image: 'data:image/png;base64...',
+  },
+  {
+    id: 2,
+    firstName: 'Manee',
+    lastName: 'DeeDee',
+    gender: 'female',
+    birthDate: '2001-01-21T00:00:00.000Z',
+    image: 'data:image/png;base64...',
+  },
+]
+```
+
 4.1.
 
 ```
