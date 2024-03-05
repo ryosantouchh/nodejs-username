@@ -9,7 +9,7 @@ export enum Gender {
 
 export type ReqQueryUser = z.infer<typeof UserReqQuerySchema>
 export type UserQueryObj = {
-  where: Record<string, unknown>
-  skip: number
-  take: number
+  where?: Record<string, unknown>
+  skip?: number
+  take?: number
 }

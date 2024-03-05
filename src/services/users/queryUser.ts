@@ -4,7 +4,7 @@ import { ReqQueryUser, UserQueryObj } from '@types'
 export const queryUser = (query: ReqQueryUser) => {
   const validatedReqQuery = UserReqQuerySchema.parse(query)
 
-  const queryObj = {} as UserQueryObj
+  const queryObj: UserQueryObj = {}
 
   queryObj.where = {}
 

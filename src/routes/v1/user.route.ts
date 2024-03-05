@@ -20,7 +20,12 @@ router.post(
   schemaValidator(CreateUserReqSchema),
   createUser
 )
-router.put('/:userId', schemaValidator(UpdateUserReqSchema), updateUserById)
+router.put(
+  '/:userId',
+  multerUpload.single('image'),
+  schemaValidator(UpdateUserReqSchema),
+  updateUserById
+)
 router.delete('/:userId', deleteUserById)
 
 export default router
