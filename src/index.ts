@@ -1,9 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-// import { connectDatabase } from '@database'
 import appRouter from './routes'
 import { errorHandler } from '@utils'
+import { PAYLOAD_SIZE } from '@constants'
 
 const app = express()
 dotenv.config()
@@ -16,7 +16,7 @@ app.use(
     extended: true,
   })
 )
-app.use(express.json())
+app.use(express.json({ limit: PAYLOAD_SIZE.MB_10 }))
 
 app.use('/', appRouter)
 app.use('/', errorHandler)

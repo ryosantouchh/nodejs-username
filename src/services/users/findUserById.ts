@@ -1,6 +1,6 @@
-import { UserEntity } from '@entities'
-import { ErrorGenerator } from '@helpers'
 import { StatusCodeEnum } from '@types'
+import { UserEntity } from '@entities'
+import { errorGenerator } from '@helpers'
 
 const findUserById = async (userId: string) => {
   try {
@@ -12,10 +12,7 @@ const findUserById = async (userId: string) => {
 
     return userById
   } catch (error) {
-    throw ErrorGenerator({
-      statusCode: StatusCodeEnum.NOT_FOUND,
-      message: 'user not found!',
-    })
+    console.error(error)
   }
 }
 

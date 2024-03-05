@@ -5,7 +5,7 @@ type ErrorGeneratorParams = {
   statusCode: StatusCodeEnum
 }
 
-export const ErrorGenerator = ({
+export const errorGenerator = ({
   message,
   statusCode,
 }: ErrorGeneratorParams) => {

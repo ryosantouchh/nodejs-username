@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserReqSchema = exports.UserSchema = void 0;
+exports.UpdateUserReqSchema = exports.CreateUserReqSchema = exports.UserSchema = void 0;
 const _types_1 = require("@types");
 const zod_1 = require("zod");
 exports.UserSchema = zod_1.z.object({
@@ -17,4 +17,8 @@ exports.CreateUserReqSchema = zod_1.z.object({
         birthDate: true,
         image: true,
     }),
+});
+exports.UpdateUserReqSchema = zod_1.z.object({
+    params: exports.UserSchema.partial().pick({ userId: true }),
+    body: exports.UserSchema.partial().omit({ userId: true }),
 });

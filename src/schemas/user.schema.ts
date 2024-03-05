@@ -7,7 +7,7 @@ export const UserSchema = z.object({
   lastName: z.string(),
   gender: z.enum([Gender.MALE, Gender.FEMALE, Gender.PREFER_NOT_TO_SAY]),
   birthDate: z.string().datetime(), // allow only ISO date string -- no need offset
-  image: z.string(),
+  image: z.union([z.string(), z.null()]),
 })
 
 export const CreateUserReqSchema = z.object({
@@ -16,4 +16,9 @@ export const CreateUserReqSchema = z.object({
     birthDate: true,
     image: true,
   }),
+})
+
+export const UpdateUserReqSchema = z.object({
+  params: UserSchema.partial().pick({ userId: true }),
+  body: UserSchema.partial().omit({ userId: true }),
 })
