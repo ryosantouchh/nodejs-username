@@ -1,5 +1,13 @@
 # Kittitat (Touch) Suntimak
 
+### Stack
+
+- Node.js
+- Express.js
+- Typescript
+- Zod
+- Prisma
+
 ### Prerequisite
 
 - Yarn
@@ -25,6 +33,12 @@ Install the dependencies and devDependencies and start the server.
 
 ```sh
 yarn && yarn serve
+```
+
+##### Open another terminal to see how table look like
+
+```
+yarn prisma studio
 ```
 
 ### Use Postman to Call these Routes
