@@ -1,6 +1,7 @@
 import type { Router } from 'express'
 import express from 'express'
 import { CreateUserReqSchema, UpdateUserReqSchema } from '@schemas'
+import { multerUpload, schemaValidator } from '@middlewares'
 import {
   createUser,
   getUserById,
@@ -8,7 +9,6 @@ import {
   deleteUserById,
   updateUserById,
 } from '@controllers'
-import { multerUpload, schemaValidator } from '@middlewares'
 
 const router: Router = express.Router()
 

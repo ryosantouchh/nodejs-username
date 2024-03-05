@@ -10,6 +10,13 @@ export const UserSchema = z.object({
   image: z.union([z.string(), z.null()]),
 })
 
+export const UserReqQuerySchema = z.object({
+  search: z.string().optional(),
+  page: z.string().optional(),
+  itemPerPage: z.string().optional(),
+})
+
+// ###### Schema Validate ######
 export const CreateUserReqSchema = z.object({
   body: UserSchema.omit({
     userId: true,

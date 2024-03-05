@@ -1,6 +1,4 @@
-import { StatusCodeEnum } from '@types'
 import { UserEntity } from '@entities'
-import { errorGenerator } from '@helpers'
 
 const findUserById = async (userId: string) => {
   try {

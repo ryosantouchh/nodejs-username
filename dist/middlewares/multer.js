@@ -5,4 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.multerUpload = void 0;
 const multer_1 = __importDefault(require("multer"));
-exports.multerUpload = (0, multer_1.default)({ limits: { fileSize: 10 * 1024 * 1024 } });
+const _constants_1 = require("@constants");
+exports.multerUpload = (0, multer_1.default)({
+    limits: { fileSize: _constants_1.MULTER_FILE_SIZE.MB_10 },
+});

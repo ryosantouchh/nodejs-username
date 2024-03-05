@@ -3,9 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsers = void 0;
 const _entities_1 = require("@entities");
 const _types_1 = require("@types");
-const getUsers = async (_req, res, next) => {
+const _services_1 = require("@services");
+const getUsers = async (req, res, next) => {
     try {
-        const users = await _entities_1.UserEntity.findMany();
+        const query = (0, _services_1.queryUser)(req.query);
+        const users = await _entities_1.UserEntity.findMany(query);
         const userCount = users.length;
         const getUserResponse = {
             count: userCount,

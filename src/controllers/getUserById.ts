@@ -1,5 +1,4 @@
 import type { NextFunction, Request, Response } from 'express'
-import { UserEntity } from '@entities'
 import { StatusCodeEnum } from '@types'
 import { findUserById } from '@services'
 import { errorGenerator } from '@helpers'
