@@ -1,13 +1,9 @@
-import type { NextFunction, Request, Response } from 'express'
+import type { RequestHandler } from 'express'
 import { UserEntity } from '@entities'
 import { StatusCodeEnum } from '@types'
 import { queryUser } from '@services'
 
-export const getUsers = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const getUsers: RequestHandler = async (req, res, next) => {
   try {
     const query = queryUser(req.query)
     const users = await UserEntity.findMany(query)

@@ -12,6 +12,19 @@ const port = process.env.NODE_SERVER_PORT || '8080'
 
 app.use(cors())
 app.use(
+  cors({
+    origin: '*',
+    allowedHeaders: [
+      'Origin',
+      'X-Requested-With',
+      'Content-Type',
+      'Accept',
+      'X-Access-Token',
+    ],
+    methods: 'GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS',
+  })
+)
+app.use(
   express.urlencoded({
     extended: true,
   })
