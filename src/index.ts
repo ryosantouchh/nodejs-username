@@ -4,6 +4,7 @@ import cors from 'cors'
 import appRouter from './routes'
 import { errorHandler } from '@utils'
 import { PAYLOAD_SIZE } from '@constants'
+import swaggerDocsInit from './swagger/swagger'
 
 const app = express()
 dotenv.config()
@@ -36,4 +37,5 @@ app.use('/', errorHandler)
 
 app.listen(port, () => {
   console.log('server running at port 8080')
+  swaggerDocsInit(app, port)
 })

@@ -1,0 +1,44 @@
+components:
+  schemas:
+    GetUsers:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+          gender:
+            type: string
+            enum: [male, female, prefer_not_to_say]
+            default: male
+          birthDate:
+            type: string
+            nullable: true
+            format: date-time
+            default: '2022-01-01T00:00:00.000Z'
+          image:
+            type: string
+            nullable: true
+            default: '2022-01-01T00:00:00.000Z'
+          createdAt:
+            type: string
+            default: '2022-01-01T00:00:00.000Z'
+      example:
+        - id: 1
+          firstName: Trevor
+          lastName: Lawrence
+          gender: male
+          birthDate: '2022-01-01T00:00:00.000Z'
+          image: null
+          createdAt: '2022-01-01T00:00:00.000Z'
+        - id: 2
+          firstName: Justin
+          lastName: Field
+          gender: male
+          birthDate: '1997-01-02T00:00:00.000Z'
+          image: data,base64,...
+          createdAt: '2022-01-01T00:00:00.000Z'

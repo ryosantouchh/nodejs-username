@@ -12,6 +12,7 @@
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "resolveJsonModule": true,
     "paths": {
       "@config": ["src/config"],
       "@config/*": ["src/config/*"],
@@ -36,7 +37,9 @@
       "@types": ["src/types"],
       "@types/*": ["src/types/*"],
       "@utils": ["src/utils"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@swagger": ["src/swagger"],
+      "@swagger/*": ["src/swagger/*"]
     }
   }
 }
